@@ -100,6 +100,23 @@
   margin-right: 10px;
 }
 
+.logout-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #ff4b2b, #ff416c);
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 20px; /* Add margin to separate from other content */
+}
+
+.logout-button:hover {
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .auth-container {

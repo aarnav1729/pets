@@ -15,12 +15,23 @@ const App = () => {
     setUser(user);
   };
 
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+    setUser(null);
+  };
+
   return (
     <Router>
       <div className="app">
         <Routes>
-          <Route path="/" element={isAuthenticated ? <Navigate to="/profile" /> : <Auth onLogin={handleLogin} />} />
-          <Route path="/profile" element={<Profile user={user} />} />
+          <Route
+            path="/"
+            element={isAuthenticated ? <Navigate to="/profile" /> : <Auth onLogin={handleLogin} />}
+          />
+          <Route
+            path="/profile"
+            element={<Profile user={user} onLogout={handleLogout} />}
+          />
         </Routes>
       </div>
     </Router>
@@ -28,4 +39,3 @@ const App = () => {
 };
 
 export default App;
-

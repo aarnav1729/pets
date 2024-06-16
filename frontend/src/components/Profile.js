@@ -1,11 +1,17 @@
 // src/components/Profile.js
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import '../auth.css';
 
-const Profile = () => {
+const Profile = ({ onLogout }) => {
   const location = useLocation();
   const user = location.state.user;
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    onLogout();
+    navigate('/');
+  };
 
   return (
     <div className="auth-container">
@@ -44,6 +50,9 @@ const Profile = () => {
           <label>Department:</label>
           <p>{user.department}</p>
         </div>
+        <button className="logout-button" onClick={handleLogout}>
+          Logout
+        </button>
       </div>
     </div>
   );
