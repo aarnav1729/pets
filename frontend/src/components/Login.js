@@ -10,7 +10,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/users/login', { employeeId, mobileNumber });
+      const res = await axios.post('https://pets-k2iv.onrender.com/api/users/login', { employeeId, mobileNumber });
       if (res.data.message === 'Login successful') {
         navigate('/profile', { state: { user: res.data.user } });
       } else {
