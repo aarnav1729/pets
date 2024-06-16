@@ -1,61 +1,29 @@
 // src/App.js
-import React, { useState, useEffect } from 'react';
-import Sidebar from './components/SideBar';
-import Header from './components/Header';
-import TicketTable from './components/TicketTable';
-import NewTicketForm from './components/NewTicketForm';
+import React, { useState } from 'react';
 import Auth from './components/Auth';
 import './App.css';
-import './components/auth.css';
+import './auth.css';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [showForm, setShowForm] = useState(false);
-  const [tickets, setTickets] = useState([]);
+  const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      setIsAuthenticated(true);
-    }
-  }, []);
-
-  const handleNewTicketClick = () => {
-    setShowForm(true);
-  };
-
-  const handleCloseForm = () => {
-    setShowForm(false);
-  };
-
-  const addTicket = (newTicket) => {
-    setTickets([...tickets, newTicket]);
-  };
-
-  const handleLogin = () => {
+  const handleLogin = (user) => {
     setIsAuthenticated(true);
+    setUser(user);
   };
-
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    setIsAuthenticated(false);
-  };
-
-  if (!isAuthenticated) {
-    return (
-      <Auth onLogin={handleLogin} />
-    );
-  }
 
   return (
     <div className="app">
-      <Sidebar />
-      <div className="main">
-        <Header onLogout={handleLogout} />
-        <button onClick={handleNewTicketClick} className="new-ticket-button">+ New Ticket</button>
-        <TicketTable tickets={tickets} setTickets={setTickets} />
-        {showForm && <NewTicketForm onClose={handleCloseForm} onAddTicket={addTicket} />}
-      </div>
+      {!isAuthenticated ? (
+        <Auth onLogin={handleLogin} />
+      ) : (
+        <div>
+          <h1>Welcome to the Dashboard</h1>
+          <p>You are logged in as {user.fname} {user.lname}!</p>
+          {/* You can add more components or features for authenticated users here */}
+        </div>
+      )}
     </div>
   );
 };
