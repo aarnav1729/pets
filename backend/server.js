@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const dbURI = 'mongodb+srv://aarnavsingh836:Cucumber1729@rr.oldse8x.mongodb.net/user?retryWrites=true&w=majority&appName=rr';
+const dbURI = process.env.MONGODB_URI;
 mongoose.connect(dbURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -21,6 +21,11 @@ db.once('open', () => {
 });
 
 app.use('/api/users', require('./routes/users'));
+
+// Define a root route
+app.get('/', (req, res) => {
+  res.send('Welcome to pets');
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
