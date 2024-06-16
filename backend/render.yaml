@@ -3,7 +3,7 @@ services:
     name: ticketing-app-backend
     env: node
     plan: free
-    buildCommand: "npx npm install"
+    buildCommand: "npm install"
     startCommand: "npm start"
     envVars:
       - key: MONGODB_URI
