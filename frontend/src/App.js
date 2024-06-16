@@ -1,22 +1,63 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Login from './components/Login';
-import Register from './components/Register';
-import Profile from './components/Profile';
+// src/App.js
+import React, { useState, useEffect } from 'react';
+import Sidebar from './components/SideBar';
+import Header from './components/Header';
+import TicketTable from './components/TicketTable';
+import NewTicketForm from './components/NewTicketForm';
+import Auth from './components/Auth';
+import './App.css';
+import './components/auth.css';
 
-function App() {
+const App = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const [tickets, setTickets] = useState([]);
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+  const handleNewTicketClick = () => {
+    setShowForm(true);
+  };
+
+  const handleCloseForm = () => {
+    setShowForm(false);
+  };
+
+  const addTicket = (newTicket) => {
+    setTickets([...tickets, newTicket]);
+  };
+
+  const handleLogin = () => {
+    setIsAuthenticated(true);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    setIsAuthenticated(false);
+  };
+
+  if (!isAuthenticated) {
+    return (
+      <Auth onLogin={handleLogin} />
+    );
+  }
+
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/" element={<Register />} />
-        </Routes>
+    <div className="app">
+      <Sidebar />
+      <div className="main">
+        <Header onLogout={handleLogout} />
+        <button onClick={handleNewTicketClick} className="new-ticket-button">+ New Ticket</button>
+        <TicketTable tickets={tickets} setTickets={setTickets} />
+        {showForm && <NewTicketForm onClose={handleCloseForm} onAddTicket={addTicket} />}
       </div>
-    </Router>
+    </div>
   );
-}
+};
 
 export default App;

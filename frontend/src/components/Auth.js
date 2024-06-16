@@ -5,7 +5,7 @@ import Register from './Register';
 import '../auth.css';
 
 const Auth = ({ onLogin }) => {
-  const [activeTab, setActiveTab] = useState('register');
+  const [activeTab, setActiveTab] = useState('login');
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
