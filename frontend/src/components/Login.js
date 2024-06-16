@@ -1,9 +1,11 @@
 // src/components/Login.js
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = ({ onLogin }) => {
   const [employeeId, setEmployeeId] = useState('');
   const [mobileNumber, setMobileNumber] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,6 +21,7 @@ const Login = ({ onLogin }) => {
       if (res.ok) {
         const data = await res.json();
         onLogin(data.user);
+        navigate('/profile', { state: { user: data.user } });
       } else {
         alert('Invalid credentials');
       }
@@ -53,3 +56,4 @@ const Login = ({ onLogin }) => {
 };
 
 export default Login;
+

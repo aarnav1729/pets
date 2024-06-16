@@ -1,6 +1,8 @@
 // src/App.js
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Auth from './components/Auth';
+import Profile from './components/Profile';
 import './App.css';
 import './auth.css';
 
@@ -14,17 +16,14 @@ const App = () => {
   };
 
   return (
-    <div className="app">
-      {!isAuthenticated ? (
-        <Auth onLogin={handleLogin} />
-      ) : (
-        <div>
-          <h1>Welcome to the Dashboard</h1>
-          <p>You are logged in as {user.fname} {user.lname}!</p>
-          {/* You can add more components or features for authenticated users here */}
-        </div>
-      )}
-    </div>
+    <Router>
+      <div className="app">
+        <Routes>
+          <Route path="/" element={isAuthenticated ? <Navigate to="/profile" /> : <Auth onLogin={handleLogin} />} />
+          <Route path="/profile" element={<Profile user={user} />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
