@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const dbURI = 'mongodb+srv://aarnavsingh836@gmail.com:Cucumber@1729@rr.oldse8x.mongodb.net/user?retryWrites=true&w=majority&appName=rr';
+const dbURI = 'mongodb+srv://aarnavsingh836:Cucumber1729@rr.oldse8x.mongodb.net/user?retryWrites=true&w=majority&appName=rr';
 mongoose.connect(dbURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
