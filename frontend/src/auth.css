@@ -6,13 +6,15 @@
   height: 100vh;
   background-color: #f4f4f4;
   position: relative;
+  padding: 20px; /* Added padding for smaller screens */
+  box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
 }
 
 .auth-logo {
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 300px;
+  width: 150px; /* Reduced size for better responsiveness */
   height: auto;
 }
 
@@ -21,13 +23,16 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 100%;
+  max-width: 400px; /* Added max-width for responsiveness */
+  box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
 }
 
 .auth-form h2 {
   margin-bottom: 20px;
   font-size: 24px;
   color: #333;
+  text-align: center; /* Centered text for better appearance on small screens */
 }
 
 .auth-form div {
@@ -46,7 +51,7 @@
   font-size: 16px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
 }
 
 .auth-form button {
@@ -93,4 +98,58 @@
 
 .auth-tabs button:not(:last-child) {
   margin-right: 10px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .auth-logo {
+    position: static;
+    width: 120px;
+    margin-bottom: 20px;
+  }
+
+  .auth-form {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .auth-tabs {
+    flex-direction: column;
+  }
+
+  .auth-tabs button {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-form {
+    padding: 15px;
+  }
+
+  .auth-form h2 {
+    font-size: 20px;
+  }
+
+  .auth-form input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .auth-form button {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .auth-tabs button {
+    padding: 8px;
+    font-size: 14px;
+  }
 }
