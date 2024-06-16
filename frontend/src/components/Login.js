@@ -1,18 +1,24 @@
+// src/components/Login.js
 import React, { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const [employeeId, setEmployeeId] = useState('');
   const [mobileNumber, setMobileNumber] = useState('');
-  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://pets-k2iv.onrender.com/api/users/login', { employeeId, mobileNumber });
-      if (res.data.message === 'Login successful') {
-        navigate('/profile', { state: { user: res.data.user } });
+      const res = await fetch('https://pets-k2iv.onrender.com/api/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ employeeId, mobileNumber }),
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        onLogin(data.user);
       } else {
         alert('Invalid credentials');
       }
@@ -22,15 +28,27 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <p>Your username is your employee ID and your password is your mobile number.</p>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Employee ID" required onChange={(e) => setEmployeeId(e.target.value)} />
-        <input type="text" placeholder="Mobile Number" required onChange={(e) => setMobileNumber(e.target.value)} />
-        <button type="submit">Login</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>Employee ID</label>
+        <input
+          type="text"
+          value={employeeId}
+          onChange={(e) => setEmployeeId(e.target.value)}
+          required
+        />
+      </div>
+      <div>
+        <label>Mobile Number</label>
+        <input
+          type="text"
+          value={mobileNumber}
+          onChange={(e) => setMobileNumber(e.target.value)}
+          required
+        />
+      </div>
+      <button type="submit">Login</button>
+    </form>
   );
 };
 

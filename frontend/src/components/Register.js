@@ -1,5 +1,5 @@
+// src/components/Register.js
 import React, { useState } from 'react';
-import axios from 'axios';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -23,32 +23,108 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://pets-k2iv.onrender.com/api/users/register', formData);
-      alert(res.data.message);
+      const res = await fetch('https://pets-k2iv.onrender.com/api/users/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        alert('User registered successfully');
+      } else {
+        alert('Failed to register');
+      }
     } catch (err) {
       alert('Error registering user');
     }
   };
 
   return (
-    <div>
-      <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
-        <h3>Personal Details</h3>
-        <input type="text" name="fname" placeholder="First Name" required onChange={handleChange} />
-        <input type="text" name="lname" placeholder="Last Name" required onChange={handleChange} />
-        <input type="text" name="mobileNumber" placeholder="Mobile Number" required onChange={handleChange} />
-        <input type="email" name="email" placeholder="Email" required onChange={handleChange} />
-        
-        <h3>Company Details</h3>
-        <input type="text" name="employeeId" placeholder="Employee ID" required onChange={handleChange} />
-        <input type="text" name="companyCode" placeholder="Company Code" required onChange={handleChange} />
-        <input type="text" name="reportingManager" placeholder="Reporting Manager" required onChange={handleChange} />
-        <input type="text" name="department" placeholder="Department" required onChange={handleChange} />
-
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>First Name</label>
+        <input
+          type="text"
+          name="fname"
+          value={formData.fname}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div>
+        <label>Last Name</label>
+        <input
+          type="text"
+          name="lname"
+          value={formData.lname}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div>
+        <label>Mobile Number</label>
+        <input
+          type="text"
+          name="mobileNumber"
+          value={formData.mobileNumber}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div>
+        <label>Email</label>
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div>
+        <label>Employee ID</label>
+        <input
+          type="text"
+          name="employeeId"
+          value={formData.employeeId}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div>
+        <label>Company Code</label>
+        <input
+          type="text"
+          name="companyCode"
+          value={formData.companyCode}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div>
+        <label>Reporting Manager</label>
+        <input
+          type="text"
+          name="reportingManager"
+          value={formData.reportingManager}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div>
+        <label>Department</label>
+        <input
+          type="text"
+          name="department"
+          value={formData.department}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <button type="submit">Register</button>
+    </form>
   );
 };
 
