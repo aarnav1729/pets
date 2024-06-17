@@ -5,6 +5,10 @@ import Auth from './components/Auth';
 import Profile from './components/Profile';
 import './App.css';
 import './auth.css';
+// src/index.js or src/App.js
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
