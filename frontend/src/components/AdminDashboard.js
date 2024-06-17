@@ -5,29 +5,26 @@ import '../auth.css';
 
 const AdminDashboard = () => {
   const [users, setUsers] = useState([]);
+  const [tickets, setTickets] = useState([]);
 
   useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const response = await fetch('https://pets-k2iv.onrender.com/api/users'); // Ensure this endpoint is correct
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        console.log(data); // Log the response data
-        setUsers(data);
-      } catch (error) {
-        console.error('Error fetching users:', error);
-      }
-    };
+    // Fetch users
+    fetch('https://pets-k2iv.onrender.com/api/users')
+      .then((response) => response.json())
+      .then((data) => setUsers(data))
+      .catch((error) => console.error('Error fetching users:', error));
 
-    fetchUsers();
+    // Fetch tickets
+    fetch('https://pets-k2iv.onrender.com/api/tickets')
+      .then((response) => response.json())
+      .then((data) => setTickets(data))
+      .catch((error) => console.error('Error fetching tickets:', error));
   }, []);
 
   return (
-    <div className="admin-container">
+    <div>
       <Navbar />
-      <div className="auth-container">
+      <div className="admin-container">
         <div className="auth-form">
           <h2>User Table ({users.length})</h2>
           <table className="user-table">
@@ -60,6 +57,40 @@ const AdminDashboard = () => {
               ) : (
                 <tr>
                   <td colSpan="8">No users found</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="auth-form">
+          <h2>IT Tickets ({tickets.length})</h2>
+          <table className="user-table">
+            <thead>
+              <tr>
+                <th>Serial Number</th>
+                <th>Issue</th>
+                <th>Description</th>
+                <th>Assignee</th>
+                <th>Priority</th>
+                <th>Attachment</th>
+              </tr>
+            </thead>
+            <tbody>
+              {tickets.length > 0 ? (
+                tickets.map((ticket) => (
+                  <tr key={ticket._id}>
+                    <td>{ticket.serialNumber}</td>
+                    <td>{ticket.issue}</td>
+                    <td>{ticket.description}</td>
+                    <td>{ticket.assignee}</td>
+                    <td>{ticket.priority}</td>
+                    <td>{ticket.attachment ? 'Yes' : 'No'}</td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="6">No tickets found</td>
                 </tr>
               )}
             </tbody>

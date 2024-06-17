@@ -1,6 +1,6 @@
 const express = require('express');
-const multer = require('multer');
 const router = express.Router();
+const multer = require('multer');
 const Ticket = require('../models/Ticket'); // Ensure you have a Ticket model created
 
 // Configure multer for file uploads
@@ -26,6 +26,16 @@ router.post('/', upload.single('attachment'), async (req, res) => {
     res.status(201).json({ message: 'Ticket created successfully' });
   } catch (error) {
     res.status(400).json({ message: 'Error creating ticket', error });
+  }
+});
+
+// Get all tickets
+router.get('/', async (req, res) => {
+  try {
+    const tickets = await Ticket.find();
+    res.status(200).json(tickets);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching tickets', error });
   }
 });
 
