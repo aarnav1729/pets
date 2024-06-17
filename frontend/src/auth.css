@@ -154,6 +154,56 @@ table.user-table {
   margin-top: 10px;
 }
 
+/* Home Page Styling */
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 56px); /* Adjust for the navbar height */
+  background-color: #f4f4f4;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.home-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
+}
+
+.home-box {
+  background: white;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 200px;
+  text-decoration: none;
+  color: black;
+  transition: transform 0.3s ease;
+}
+
+.home-box:hover {
+  transform: translateY(-5px);
+}
+
+.home-box-content img {
+  width: 50px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.home-box-content h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .auth-container {
@@ -184,6 +234,16 @@ table.user-table {
   .user-table th, .user-table td {
     font-size: 14px;
     padding: 8px;
+  }
+
+  .home-boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-box {
+    width: 80%;
+    max-width: 300px;
   }
 }
 
