@@ -102,11 +102,11 @@ const Register = () => {
           required
         >
           <option value="">Select your company</option>
-          <option value="COMP1">Company 1</option>
-          <option value="COMP2">Company 2</option>
-          <option value="COMP3">Company 3</option>
-          <option value="COMP4">Company 4</option>
-          <option value="COMP5">Company 5</option>
+          <option value="COMP1">1000</option>
+          <option value="COMP2">2000</option>
+          <option value="COMP3">3000</option>
+          <option value="COMP4">4000</option>
+          <option value="COMP5">5000</option>
         </select>
       </div>
       <div>

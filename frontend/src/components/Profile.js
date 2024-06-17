@@ -18,7 +18,7 @@ const Profile = ({ onLogout }) => {
     <div className="profile-container">
       <nav className="navbar navbar-expand-lg navbar-light bg-light w-100">
         <Link className="navbar-brand" to="/">
-          <img src={require('../logo.png')} alt="Logo" className="auth-logo" />
+          <img src={require('../logo.png')} alt="Logo" className="navbar-logo" />
         </Link>
         <button
           className="navbar-toggler"
