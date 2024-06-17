@@ -7,7 +7,7 @@
 }
 
 .navbar-logo {
-  width: 150px; /* Adjusted for the navbar */
+  width: 250px; /* Adjusted for the navbar */
   height: auto;
 }
 
@@ -26,7 +26,7 @@
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 150px; /* Original size */
+  width: 250px; /* Original size */
   height: auto;
 }
 
