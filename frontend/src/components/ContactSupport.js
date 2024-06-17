@@ -47,7 +47,7 @@ const ContactSupport = () => {
             {contactDetails.map((contact, index) => (
               <li key={index} className="contact-item">
                 <h3>{contact.company}</h3>
-                <h3>{contact.code}</h3>
+                <h4>{contact.code}</h4>
                 <p>Email: <a href={`mailto:${contact.email}`}>{contact.email}</a></p>
                 <p>Phone: <a href={`tel:${contact.phone}`}>{contact.phone}</a></p>
               </li>
