@@ -7,7 +7,7 @@
 }
 
 .navbar-logo {
-  width: 250px; /* Adjusted for the navbar */
+  width: 200px; /* Adjusted for the navbar */
   height: auto;
 }
 
@@ -24,12 +24,10 @@
 
 .auth-logo {
   position: absolute;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200px; /* Original size */
+  top: 20px;
+  left: 20px;
+  width: 250px; /* Original size */
   height: auto;
-  padding-bottom: 10px;
 }
 
 .auth-form {
@@ -38,9 +36,9 @@
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 1200px; /* Adjust width for the table */
+  max-width: 800px; /* Adjust width for the form */
   box-sizing: border-box;
-  margin: 0 auto; /* Center align the form */
+  margin-top: 100px; /* Add margin to avoid overlap with logo */
 }
 
 .auth-form h2 {
