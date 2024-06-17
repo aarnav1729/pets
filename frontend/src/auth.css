@@ -36,8 +36,9 @@
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 800px; /* Adjust width for the table */
+  max-width: 1000px; /* Adjust width for the table */
   box-sizing: border-box;
+  margin: 0 auto; /* Center align the form */
 }
 
 .auth-form h2 {
@@ -166,6 +167,7 @@ table.user-table {
   .auth-form {
     width: 100%;
     max-width: 100%;
+    margin: 20px; /* Add margin for better spacing on small screens */
   }
 
   .auth-tabs {
@@ -175,6 +177,11 @@ table.user-table {
   .auth-tabs button {
     margin-bottom: 10px;
     margin-right: 0;
+  }
+
+  .user-table th, .user-table td {
+    font-size: 14px;
+    padding: 8px;
   }
 }
 
@@ -205,5 +212,6 @@ table.user-table {
 
   .user-table th, .user-table td {
     font-size: 12px;
+    padding: 6px;
   }
 }
