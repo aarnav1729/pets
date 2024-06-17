@@ -8,6 +8,9 @@ import Home from './components/Home';
 import Admin from './components/Admin';
 import './App.css';
 import './auth.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min'; 
+
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
