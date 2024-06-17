@@ -5,7 +5,6 @@ import Auth from './components/Auth';
 import Profile from './components/Profile';
 import Dashboard from './components/Dashboard';
 import Home from './components/Home';
-import Admin from './components/Admin';
 import AdminLogin from './components/AdminLogin';
 import AdminDashboard from './components/AdminDashboard';
 import './App.css';
