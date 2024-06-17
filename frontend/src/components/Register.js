@@ -95,13 +95,20 @@ const Register = () => {
       </div>
       <div>
         <label>Company Code</label>
-        <input
-          type="text"
+        <select
           name="companyCode"
           value={formData.companyCode}
           onChange={handleChange}
           required
-        />
+        >
+          <option value="">Select Company Code</option>
+          <option value="1000">1000</option>
+          <option value="2000">2000</option>
+          <option value="3000">3000</option>
+          <option value="4000">4000</option>
+          <option value="5000">5000</option>
+        </select>
+
       </div>
       <div>
         <label>Reporting Manager</label>
