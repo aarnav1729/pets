@@ -182,7 +182,7 @@ table.user-table {
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 400px;
+  width: 300px;
   text-decoration: none;
   color: black;
   transition: transform 0.3s ease;
@@ -193,14 +193,14 @@ table.user-table {
 }
 
 .home-box-content img {
-  width: 70px;
+  width: 100px;
   height: auto;
   margin-bottom: 10px;
 }
 
 .home-box-content h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: 24px;
   color: #333;
 }
 
