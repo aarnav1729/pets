@@ -18,19 +18,20 @@ const ContactSupport = () => {
       phone: '123-456-7891',
     },
     {
-      company: 'PEIPL - Premier Energies International Private Limited',
+      
+      company: 'PSPT - Premier Solar Power Tech Private Limited',
       code: '3000',
       email: 'support@companyc.com',
       phone: '123-456-7892',
     },
     {
-      company: 'PEGPL - Premier Energies Global Environmental Private Limited',
+      company: 'PEIPL - Premier Energies International Private Limited',
       code: '4000',
       email: 'support@companyd.com',
       phone: '123-456-7893',
     },
     {
-      company: 'PSPT - Premier Solar Power Tech Private Limited',
+      company: 'PEGPL - Premier Energies Global Environmental Private Limited',
       code: '5000',
       email: 'support@companye.com',
       phone: '123-456-7894',
