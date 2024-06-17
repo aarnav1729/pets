@@ -12,25 +12,25 @@ const Home = () => {
         <div className="home-boxes">
           <Link to="/it" className="home-box">
             <div className="home-box-content">
-              <img src={require('')} alt="IT" />
+              <img src={require('../icons/it.png')} alt="IT" />
               <h3>IT</h3>
             </div>
           </Link>
           <Link to="/sap" className="home-box">
             <div className="home-box-content">
-              <img src={require('')} alt="SAP" />
+              <img src={require('../icons/it.png')} alt="SAP" />
               <h3>SAP</h3>
             </div>
           </Link>
           <Link to="/other" className="home-box">
             <div className="home-box-content">
-              <img src={require('')} alt="Other" />
+              <img src={require('../icons/it.png')} alt="Other" />
               <h3>Other</h3>
             </div>
           </Link>
           <Link to="/contact-support" className="home-box">
             <div className="home-box-content">
-              <img src={require('')} alt="Contact Support" />
+              <img src={require('../icons/it.png')} alt="Contact Support" />
               <h3>Contact Support</h3>
             </div>
           </Link>
