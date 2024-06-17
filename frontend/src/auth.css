@@ -36,7 +36,7 @@
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 1000px; /* Adjust width for the table */
+  max-width: 1200px; /* Adjust width for the table */
   box-sizing: border-box;
   margin: 0 auto; /* Center align the form */
 }
@@ -135,12 +135,14 @@ table.user-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  table-layout: fixed; /* Ensures the table doesn't overflow */
 }
 
 .user-table th, .user-table td {
   padding: 12px;
   border: 1px solid #ddd;
   text-align: left;
+  word-wrap: break-word; /* Ensures long words break into the next line */
 }
 
 .user-table th {

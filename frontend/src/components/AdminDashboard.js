@@ -29,7 +29,7 @@ const AdminDashboard = () => {
       <Navbar />
       <div className="auth-container">
         <div className="auth-form">
-          <h2>User Table</h2>
+          <h2>User Table ({users.length})</h2>
           <table className="user-table">
             <thead>
               <tr>
