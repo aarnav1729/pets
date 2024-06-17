@@ -157,7 +157,7 @@ table.user-table {
 /* Home Page Styling */
 .home-container {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   flex-direction: column;
   height: calc(100vh - 56px); /* Adjust for the navbar height */
@@ -169,7 +169,7 @@ table.user-table {
 .home-boxes {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
   width: 100%;
   max-width: 1200px;
   margin-top: 20px;
@@ -193,7 +193,7 @@ table.user-table {
 }
 
 .home-box-content img {
-  width: 50px;
+  width: 70px;
   height: auto;
   margin-bottom: 10px;
 }
@@ -238,7 +238,7 @@ table.user-table {
 
   .home-boxes {
     flex-direction: column;
-    align-items: center;
+    align-items: start;
   }
 
   .home-box {
