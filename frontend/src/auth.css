@@ -26,8 +26,9 @@
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 250px; /* Original size */
+  width: 200px; /* Original size */
   height: auto;
+  padding-bottom: 10px;
 }
 
 .auth-form {
