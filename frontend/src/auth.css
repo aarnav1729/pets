@@ -1,5 +1,5 @@
 /* src/auth.css */
-.profile-container {
+.profile-container, .admin-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -128,6 +128,27 @@
 
 .logout-button:hover {
   background: linear-gradient(90deg, #ff416c, #ff4b2b);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
 }
 
 /* Media Queries for Responsiveness */
