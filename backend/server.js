@@ -21,6 +21,7 @@ db.once('open', () => {
 });
 
 app.use('/api/users', require('./routes/users'));
+app.use('/api/tickets', require('./routes/tickets'));
 
 // Define a root route
 app.get('/', (req, res) => {
