@@ -10,13 +10,13 @@ const Home = () => {
       <Navbar />
       <div className="home-container">
         <div className="home-boxes">
-          <Link to="/it" className="home-box">
+          <Link to="/IT" className="home-box">
             <div className="home-box-content">
               <img src={require('../icons/it.png')} alt="IT" />
               <h3>IT</h3>
             </div>
           </Link>
-          <Link to="/sap" className="home-box">
+          <Link to="/SAP" className="home-box">
             <div className="home-box-content">
               <img src={require('../icons/sap.png')} alt="SAP" />
               <h3>SAP</h3>
