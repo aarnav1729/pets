@@ -1,48 +1,46 @@
 // src/components/Navbar.js
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import '../navbar.css';
+import '../auth.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
-          <img src={require('../logo.png')} alt="Logo" />
-        </Link>
-        <div className="menu-icon" onClick={toggleMenu}>
-          <i className={isOpen ? 'fas fa-times' : 'fas fa-bars'} />
-        </div>
-        <ul className={isOpen ? 'nav-menu active' : 'nav-menu'}>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light w-100">
+      <Link className="navbar-brand" to="/">
+        <img src={require('../logo.png')} alt="Logo" className="navbar-logo" />
+      </Link>
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul className="navbar-nav">
           <li className="nav-item">
-            <Link to="/" className="nav-links" onClick={toggleMenu}>
-              Home
+            <Link className="nav-link" to="/profile">
+              Profile
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/it" className="nav-links" onClick={toggleMenu}>
-              IT
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/sap" className="nav-links" onClick={toggleMenu}>
-              SAP
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/dashboard" className="nav-links" onClick={toggleMenu}>
+            <Link className="nav-link" to="/dashboard">
               Dashboard
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/profile" className="nav-links" onClick={toggleMenu}>
-              Profile
+            <Link className="nav-link" to="/home">
+              Home
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/admin">
+              Admin
             </Link>
           </li>
         </ul>

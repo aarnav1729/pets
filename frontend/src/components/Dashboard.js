@@ -5,11 +5,13 @@ import '../auth.css';
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className="page-container">
       <Navbar />
-      <div className="auth-form">
-        <h2>Dashboard Page</h2>
-        <p>Welcome to the Dashboard Page</p>
+      <div className="auth-container">
+        <div className="auth-form">
+          <h2>Dashboard</h2>
+          <p>Welcome to the Dashboard!</p>
+        </div>
       </div>
     </div>
   );
