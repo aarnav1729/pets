@@ -169,9 +169,9 @@ table.user-table {
 .home-boxes {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
   margin-top: 20px;
 }
 
@@ -182,7 +182,7 @@ table.user-table {
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 200px;
+  width: 400px;
   text-decoration: none;
   color: black;
   transition: transform 0.3s ease;
