@@ -28,7 +28,7 @@ const Home = () => {
               <h3>Other</h3>
             </div>
           </Link>
-          <Link to="/contact-support" className="home-box">
+          <Link to="/ContactSupport" className="home-box">
             <div className="home-box-content">
               <img src={require('../icons/cs.jpg')} alt="Contact Support" />
               <h3>Contact Support</h3>

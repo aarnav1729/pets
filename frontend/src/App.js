@@ -9,6 +9,7 @@ import AdminLogin from './components/AdminLogin';
 import AdminDashboard from './components/AdminDashboard';
 import './App.css';
 import './auth.css';
+import ContactSupport from './components/ContactSupport';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -40,6 +41,7 @@ const App = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/admin" element={<AdminLogin />} />
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
+          <Route path="/ContactSupport" element={<ContactSupport />} />
         </Routes>
       </div>
     </Router>
