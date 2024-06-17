@@ -23,9 +23,8 @@
 }
 
 .auth-logo {
-  position: absolute;
+  position: center;
   top: 20px;
-  left: 20px;
   width: 200px; /* Original size */
   height: auto;
   padding-bottom: 10px;
