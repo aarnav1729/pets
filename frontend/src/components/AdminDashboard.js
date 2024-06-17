@@ -25,6 +25,42 @@ const AdminDashboard = () => {
     <div>
       <Navbar />
       <div className="admin-container">
+
+      <div className="auth-form">
+          <h2>IT Tickets ({tickets.length})</h2>
+          <table className="user-table">
+            <thead>
+              <tr>
+                <th>Serial Number</th>
+                <th>Issue</th>
+                <th>Description</th>
+                <th>Assignee</th>
+                <th>Priority</th>
+                <th>Attachment</th>
+              </tr>
+            </thead>
+            <tbody>
+              {tickets.length > 0 ? (
+                tickets.map((ticket) => (
+                  <tr key={ticket._id}>
+                    <td>{ticket.serialNumber}</td>
+                    <td>{ticket.issue}</td>
+                    <td>{ticket.description}</td>
+                    <td>{ticket.assignee}</td>
+                    <td>{ticket.priority}</td>
+                    <td>{ticket.attachment ? 'Yes' : 'No'}</td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="6">No tickets found</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+
+
         <div className="auth-form">
           <h2>User Table ({users.length})</h2>
           <table className="user-table">
@@ -57,40 +93,6 @@ const AdminDashboard = () => {
               ) : (
                 <tr>
                   <td colSpan="8">No users found</td>
-                </tr>
-              )}
-            </tbody>
-          </table>
-        </div>
-
-        <div className="auth-form">
-          <h2>IT Tickets ({tickets.length})</h2>
-          <table className="user-table">
-            <thead>
-              <tr>
-                <th>Serial Number</th>
-                <th>Issue</th>
-                <th>Description</th>
-                <th>Assignee</th>
-                <th>Priority</th>
-                <th>Attachment</th>
-              </tr>
-            </thead>
-            <tbody>
-              {tickets.length > 0 ? (
-                tickets.map((ticket) => (
-                  <tr key={ticket._id}>
-                    <td>{ticket.serialNumber}</td>
-                    <td>{ticket.issue}</td>
-                    <td>{ticket.description}</td>
-                    <td>{ticket.assignee}</td>
-                    <td>{ticket.priority}</td>
-                    <td>{ticket.attachment ? 'Yes' : 'No'}</td>
-                  </tr>
-                ))
-              ) : (
-                <tr>
-                  <td colSpan="6">No tickets found</td>
                 </tr>
               )}
             </tbody>
