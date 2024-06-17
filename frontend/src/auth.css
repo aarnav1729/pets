@@ -36,7 +36,7 @@
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 400px;
+  max-width: 800px; /* Adjust width for the table */
   box-sizing: border-box;
 }
 
@@ -130,19 +130,19 @@
   background: linear-gradient(90deg, #ff416c, #ff4b2b);
 }
 
-table {
+table.user-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-th, td {
+.user-table th, .user-table td {
   padding: 12px;
   border: 1px solid #ddd;
   text-align: left;
 }
 
-th {
+.user-table th {
   background-color: #f4f4f4;
 }
 
@@ -201,5 +201,9 @@ th {
   .auth-tabs button {
     padding: 8px;
     font-size: 14px;
+  }
+
+  .user-table th, .user-table td {
+    font-size: 12px;
   }
 }

@@ -8,9 +8,16 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const response = await fetch('https://pets-k2iv.onrender.com/api/users'); // Adjust the API endpoint accordingly
-      const data = await response.json();
-      setUsers(data);
+      try {
+        const response = await fetch('https://pets-k2iv.onrender.com/api/users'); // Ensure this endpoint is correct
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setUsers(data);
+      } catch (error) {
+        console.error('Error fetching users:', error);
+      }
     };
 
     fetchUsers();
@@ -22,7 +29,7 @@ const AdminDashboard = () => {
       <div className="auth-container">
         <div className="auth-form">
           <h2>User Table</h2>
-          <table>
+          <table className="user-table">
             <thead>
               <tr>
                 <th>First Name</th>
@@ -36,18 +43,24 @@ const AdminDashboard = () => {
               </tr>
             </thead>
             <tbody>
-              {users.map((user) => (
-                <tr key={user._id}>
-                  <td>{user.fname}</td>
-                  <td>{user.lname}</td>
-                  <td>{user.mobileNumber}</td>
-                  <td>{user.email}</td>
-                  <td>{user.employeeId}</td>
-                  <td>{user.companyCode}</td>
-                  <td>{user.reportingManager}</td>
-                  <td>{user.department}</td>
+              {users.length > 0 ? (
+                users.map((user) => (
+                  <tr key={user._id}>
+                    <td>{user.fname}</td>
+                    <td>{user.lname}</td>
+                    <td>{user.mobileNumber}</td>
+                    <td>{user.email}</td>
+                    <td>{user.employeeId}</td>
+                    <td>{user.companyCode}</td>
+                    <td>{user.reportingManager}</td>
+                    <td>{user.department}</td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="8">No users found</td>
                 </tr>
-              ))}
+              )}
             </tbody>
           </table>
         </div>
