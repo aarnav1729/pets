@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard';
 import Home from './components/Home';
 import AdminLogin from './components/AdminLogin';
 import AdminDashboard from './components/AdminDashboard';
+import IT from './components/IT';
 import './App.css';
 import './auth.css';
 import ContactSupport from './components/ContactSupport';
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="/admin" element={<AdminLogin />} />
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
           <Route path="/ContactSupport" element={<ContactSupport />} />
+          <Route path="/IT" element={<IT />} />
         </Routes>
       </div>
     </Router>
