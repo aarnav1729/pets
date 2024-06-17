@@ -6,31 +6,31 @@ import '../auth.css';
 const ContactSupport = () => {
   const contactDetails = [
     {
-      company: 'Premier Energies Pvt Ltd',
+      company: 'PEL - Premier Energies Limited',
       email: 'support@companya.com',
       code: '1000',
       phone: '123-456-7890',
     },
     {
-      company: 'Company B',
+      company: 'PEPPL - Premier Energies Photovoltaic Private Limited',
       code: '2000',
       email: 'support@companyb.com',
       phone: '123-456-7891',
     },
     {
-      company: 'Company C',
+      company: 'PEIPL - Premier Energies International Private Limited',
       code: '3000',
       email: 'support@companyc.com',
       phone: '123-456-7892',
     },
     {
-      company: 'Company D',
+      company: 'PEGPL - Premier Energies Global Environmental Private Limited',
       code: '4000',
       email: 'support@companyd.com',
       phone: '123-456-7893',
     },
     {
-      company: 'Company E',
+      company: 'PSPT - Premier Solar Power Tech Private Limited',
       code: '5000',
       email: 'support@companye.com',
       phone: '123-456-7894',
