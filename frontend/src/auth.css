@@ -6,15 +6,15 @@
   height: 100vh;
   background-color: #f4f4f4;
   position: relative;
-  padding: 20px; /* Added padding for smaller screens */
-  box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .auth-logo {
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 150px; /* Reduced size for better responsiveness */
+  width: 150px;
   height: auto;
 }
 
@@ -24,15 +24,15 @@
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 400px; /* Added max-width for responsiveness */
-  box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+  max-width: 400px;
+  box-sizing: border-box;
 }
 
 .auth-form h2 {
   margin-bottom: 20px;
   font-size: 24px;
   color: #333;
-  text-align: center; /* Centered text for better appearance on small screens */
+  text-align: center;
 }
 
 .auth-form div {
@@ -45,13 +45,14 @@
   color: #555;
 }
 
-.auth-form input {
+.auth-form input,
+.auth-form select {
   width: 100%;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+  box-sizing: border-box;
 }
 
 .auth-form button {
@@ -110,7 +111,7 @@
   color: white;
   cursor: pointer;
   transition: background 0.3s ease;
-  margin-top: 20px; /* Add margin to separate from other content */
+  margin-top: 20px;
 }
 
 .logout-button:hover {
@@ -155,7 +156,8 @@
     font-size: 20px;
   }
 
-  .auth-form input {
+  .auth-form input,
+  .auth-form select {
     padding: 8px;
     font-size: 14px;
   }

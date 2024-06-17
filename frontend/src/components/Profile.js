@@ -5,8 +5,8 @@ import '../auth.css';
 
 const Profile = ({ onLogout }) => {
   const location = useLocation();
-  const user = location.state.user;
   const navigate = useNavigate();
+  const user = location.state ? location.state.user : {};
 
   const handleLogout = () => {
     onLogout();

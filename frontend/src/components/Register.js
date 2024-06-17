@@ -101,14 +101,13 @@ const Register = () => {
           onChange={handleChange}
           required
         >
-          <option value="">Select Company Code</option>
-          <option value="1000">1000</option>
-          <option value="2000">2000</option>
-          <option value="3000">3000</option>
-          <option value="4000">4000</option>
-          <option value="5000">5000</option>
+          <option value="">Select your company</option>
+          <option value="COMP1">Company 1</option>
+          <option value="COMP2">Company 2</option>
+          <option value="COMP3">Company 3</option>
+          <option value="COMP4">Company 4</option>
+          <option value="COMP5">Company 5</option>
         </select>
-
       </div>
       <div>
         <label>Reporting Manager</label>
