@@ -14,6 +14,7 @@ const AdminDashboard = () => {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
+        console.log(data); // Log the response data
         setUsers(data);
       } catch (error) {
         console.error('Error fetching users:', error);
