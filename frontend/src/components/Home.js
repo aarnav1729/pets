@@ -18,19 +18,19 @@ const Home = () => {
           </Link>
           <Link to="/sap" className="home-box">
             <div className="home-box-content">
-              <img src={require('../icons/sap.png')} alt="SAP" />
+              <img src={require('')} alt="SAP" />
               <h3>SAP</h3>
             </div>
           </Link>
           <Link to="/other" className="home-box">
             <div className="home-box-content">
-              <img src={require('../icons/other.png')} alt="Other" />
+              <img src={require('')} alt="Other" />
               <h3>Other</h3>
             </div>
           </Link>
           <Link to="/contact-support" className="home-box">
             <div className="home-box-content">
-              <img src={require('../icons/contact.png')} alt="Contact Support" />
+              <img src={require('.../logo.png')} alt="Contact Support" />
               <h3>Contact Support</h3>
             </div>
           </Link>
