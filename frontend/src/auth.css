@@ -6,9 +6,10 @@
   width: 100%;
 }
 
-.navbar-logo {
-  width: 50px;
+.auth-logo {
+  width: 150px; /* Original size */
   height: auto;
+  margin-left: 20px; /* Adjust for spacing */
 }
 
 .auth-container {
@@ -20,11 +21,6 @@
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
-}
-
-.auth-logo {
-  width: 150px;
-  height: auto;
 }
 
 .auth-form {
@@ -136,9 +132,7 @@
   }
 
   .auth-logo {
-    position: static;
-    width: 120px;
-    margin-bottom: 20px;
+    width: 120px; /* Smaller logo for small screens */
   }
 
   .auth-form {

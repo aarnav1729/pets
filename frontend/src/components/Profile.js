@@ -16,9 +16,9 @@ const Profile = ({ onLogout }) => {
 
   return (
     <div className="profile-container">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light w-100">
         <Link className="navbar-brand" to="/">
-          <img src={require('../logo.png')} alt="Logo" className="navbar-logo" />
+          <img src={require('../logo.png')} alt="Logo" className="auth-logo" />
         </Link>
         <button
           className="navbar-toggler"
@@ -31,7 +31,7 @@ const Profile = ({ onLogout }) => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item active">
               <Link className="nav-link" to="/profile">
