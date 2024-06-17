@@ -12,7 +12,7 @@ const Home = () => {
         <div className="home-boxes">
           <Link to="/it" className="home-box">
             <div className="home-box-content">
-              <img src={require('../icons/it.png')} alt="IT" />
+              <img src={require('')} alt="IT" />
               <h3>IT</h3>
             </div>
           </Link>
@@ -30,7 +30,7 @@ const Home = () => {
           </Link>
           <Link to="/contact-support" className="home-box">
             <div className="home-box-content">
-              <img src={require('.../logo.png')} alt="Contact Support" />
+              <img src={require('')} alt="Contact Support" />
               <h3>Contact Support</h3>
             </div>
           </Link>
